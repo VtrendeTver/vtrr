@@ -1,0 +1,23 @@
+fn main() {
+    // Creating a string
+    let mut s = String::from("hello");
+
+    // Taking a reference to the string
+    let len = calculate_length(&s);
+
+    // Modifying the string through mutable reference
+    change(&mut s);
+
+    // Printing the modified string
+    println!("The length of '{}' is {}.", s, len);
+}
+
+// Function to calculate the length of a string without taking ownership
+fn calculate_length(s: &String) -> usize {
+    s.len()
+}
+
+// Function to modify the string through a mutable reference
+fn change(some_string: &mut String) {
+    some_string.push_str(", world");
+}
